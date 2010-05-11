@@ -71,7 +71,7 @@
 
     <path id="project.classpath">
       <path refid="common.project.classpath"/>
-      <fileset dir="${selena.idea.lib}">
+      <fileset dir="${idea.lib}">
          <include name="**/*.jar"/>
       </fileset>
    </path>
@@ -190,7 +190,7 @@
              srcdir="${plugin.src.dir}"
              source="1.5" target="1.5" debug="true" deprecation="true"
              optimize="true" failonerror="true" compiler="modern" verbose="true"
-             executable="${selena.idea.dir}\jre\bin\java.exe">
+             executable="${idea.dir}\jre\bin\java.exe">
          <classpath refid="project.classpath"/>         
       </javac>
    </target>
@@ -203,7 +203,7 @@
 
     <target name="test.compile" depends="init" description="compile classes for selena tests needs 1.5">
       <javac destdir="dist/classes" target="1.5" debug="true" deprecation="true"
-             optimize="true" failonerror="true" executable="${selena.idea.dir}/jre/bin/java.exe">
+             optimize="true" failonerror="true" executable="${idea.dir}/jre/bin/java.exe">
          <classpath refid="project.classpath"/>
          <src path="${plugin.src.dir}"/>
       </javac>
@@ -232,21 +232,21 @@
       <copy todir="${deploy.plugin.dir}/lib">
          <fileset dir="${runtime.lib}"/>
       </copy>
-      <copy todir="${selena.idea.plugin.dir}" overwrite="true">
+      <copy todir="${idea.plugin.dir}" overwrite="true">
          <fileset dir="${deploy.dir}"/>
       </copy>
    </target>
 
     <target name="plugin.debug.deploy" depends="init, release.compile, buildPluginXml" description="deploys the junit test plugin to selena sandbox">
-      <copy todir="${selena.sandbox.plugin.dir}/plugins/${sandbox.plugin.name}/META-INF" overwrite="true">
+      <copy todir="${sandbox.plugin.dir}/plugins/${sandbox.plugin.name}/META-INF" overwrite="true">
          <fileset dir="${classes.dir}/META-INF">
             <include name="*.xml"/>
          </fileset>
       </copy>
-      <copy todir="${selena.sandbox.plugin.dir}/plugins/${sandbox.plugin.name}/classes" overwrite="true">
+      <copy todir="${sandbox.plugin.dir}/plugins/${sandbox.plugin.name}/classes" overwrite="true">
          <fileset dir="${classes.dir}"/>
       </copy>
-      <copy todir="${selena.sandbox.plugin.dir}/plugins/${sandbox.plugin.name}/lib" overwrite="true">
+      <copy todir="${sandbox.plugin.dir}/plugins/${sandbox.plugin.name}/lib" overwrite="true">
          <fileset dir="${runtime.lib}"/>
       </copy>
    </target>
