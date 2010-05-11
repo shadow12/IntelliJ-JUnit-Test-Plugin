@@ -1,4 +1,4 @@
-#Thu Mar 04 17:15:08 GMT 2010
-build.number=9
+#Tue May 11 17:18:32 BST 2010
+build.number=10
 minor.number=0
 major.number=1

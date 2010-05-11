@@ -1,5 +1,5 @@
 package org.intellij.plugins.junit;
 
 public class Version implements PluginVersion {
-	public String getVersion() { return "1.0 build 8 at 03/04/2010 05:15 PM"; }
+	public String getVersion() { return "1.0 build 9 at 05/11/2010 05:18 PM"; }
 }
